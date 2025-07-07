@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-heading h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-heading i {
+  color: #ee1906;
+  animation: floatGhost 2s ease-in-out infinite;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-left: 7px;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+@keyframes floatGhost {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.Main-div {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+#TaskBox {
+  flex-grow: 1;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  color: black;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#TaskBox:focus {
+  border-color: #ee1906;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(238, 25, 6, 0.2);
+}
+
+#Mybutton {
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  color: #ef4435;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #ef4435;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+#Mybutton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ef4435;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+#Mybutton:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 53, 0.3);
+}
+
+#Mybutton:hover::before {
+  transform: translateY(0);
+}
+
+.data-box {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#order-of-lists {
+  list-style: none;
+  width: 100%;
+}
+
+#order-of-lists li {
+  background: linear-gradient(135deg, #ff6d53, #f2494c);
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  word-break: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* 🆕 Hover Effect on List Item */
+#order-of-lists li:hover {
+  transform: scale(1.015);
+  background: linear-gradient(135deg, #f2494c, #ff6d53);
+  box-shadow: 0 6px 15px rgba(239, 45, 48, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+/* 🆕 Text grow slightly on hover */
+#order-of-lists li:hover span:first-child {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+#order-of-lists li > span:first-child {
+  flex-grow: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  font-weight: 500;
+}
+
+.functionality {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Icons */
+.functionality i {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.functionality i:hover {
+  background: rgba(255, 255, 255, 0.3);
+  animation: bounceIcon 0.3s ease;
+}
+
+@keyframes bounceIcon {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.delete:hover {
+  color: black;
+}
+.edit:hover {
+  color: black;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
+.feedback-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feedback-message.show {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .Main-div {
+    flex-direction: column;
+  }
+
+  #TaskBox,
+  #Mybutton {
+    width: 100%;
+  }
+
+  .main-heading h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin-left: 0;
+  }
+}

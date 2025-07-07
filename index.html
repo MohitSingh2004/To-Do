@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Senti</title>
+    <link rel="stylesheet" href="Todo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <div class="main-heading">
+      <h1>Roznama<i class="fa-solid fa-ghost"></i></h1>
+      <p class="subtitle">Roz ke jazbaat, Roznama ke saath</p>
+    </div>
+
+    <div class="Main-div">
+      <div class="notes-container" id="notes-container"></div>
+      <input type="text" id="TaskBox" placeholder="Enter Your task" />
+      <button onclick="HandleClick()" id="Mybutton">Add</button>
+    </div>
+
+    <div class="data-box">
+      <ol id="order-of-lists"></ol>
+    </div>
+
+    <script src="Todo.js"></script>
+  </body>
+</html>
