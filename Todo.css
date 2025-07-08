@@ -8,6 +8,7 @@ body {
   background: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0rem;
+  padding-bottom: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,6 +122,7 @@ body {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem !important;
 }
 
 #order-of-lists {
@@ -272,7 +274,6 @@ body {
 
 .Myfooter {
   text-align: center;
-
   background: white;
 }
 
@@ -288,6 +289,8 @@ body {
   width: 100%;
   max-width: 45vw;
   position: relative;
+  padding: 1rem 0;
+
   z-index: 0;
 }
 
@@ -324,4 +327,33 @@ body {
 .Main-div {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  /* Hide letters container on mobile */
+  .letters-container {
+    display: flex;
+    justify-content: center;
+  }
+
+ 
+  .Myfooter {
+    position: static;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    text-align: center;
+    background: white;
+    margin-top: auto;
+    font-size: 0.6rem;
+    color: #222;
+  }
+}
+
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
