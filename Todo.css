@@ -5,6 +5,7 @@
 }
 
 body {
+  margin: 1.2rem;
   background: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 0rem;
@@ -116,13 +117,13 @@ body {
 }
 
 .data-box {
-  width: 100%;
-  max-width: 500px;
+  width: 100vw;
+  max-width: 400px;
   background: white;
-  padding: 1.5rem;
+  padding: 1.4em;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem !important;
+  margin-bottom: 1rem !important;
 }
 
 #order-of-lists {
@@ -329,6 +330,7 @@ body {
   z-index: 1;
 }
 
+/* ===== MOBILE-ONLY ADJUSTMENTS ===== */
 @media (max-width: 768px) {
   /* Hide letters container on mobile */
   .letters-container {
@@ -336,7 +338,7 @@ body {
     justify-content: center;
   }
 
- 
+  /* Adjust footer spacing */
   .Myfooter {
     position: static;
     padding: 1rem 0;
@@ -349,7 +351,7 @@ body {
   }
 }
 
-
+/* NEW wrapper to make full height layout */
 .wrapper {
   flex: 1;
   display: flex;
