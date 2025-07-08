@@ -26,7 +26,7 @@ let currentEditIndex = null;
 function HandleClick() {
   let input = document.getElementById("TaskBox").value.trim();
   if (input === "") {
-    alert("Enter Some Task Burh..!");
+    alert("Enter Some Task Buddy..!");
     return;
   }
 
