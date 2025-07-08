@@ -26,7 +26,7 @@ let currentEditIndex = null;
 function HandleClick() {
   let input = document.getElementById("TaskBox").value.trim();
   if (input === "") {
-    alert("Enter Some Task Buddy..!");
+    alert("Enter Some Task Burh..!");
     return;
   }
 
@@ -132,3 +132,23 @@ function fireCrackers() {
     startVelocity: 45,
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({
+    duration: 800,
+    easing: "ease-in-out",
+    once: true,
+  });
+
+  const lettersContainer = document.getElementById("letters-container");
+  const word = "SENTI";
+
+  word.split("").forEach((letter, index) => {
+    const letterElement = document.createElement("p");
+    letterElement.textContent = letter;
+    letterElement.setAttribute("data-aos", "fade-up");
+    letterElement.setAttribute("data-aos-delay", 700 + index * 100);
+    letterElement.setAttribute("data-aos-anchor-placement", "top-bottom");
+    lettersContainer.appendChild(letterElement);
+  });
+});
