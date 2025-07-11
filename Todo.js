@@ -73,10 +73,12 @@ function safai() {
     ol.appendChild(li);
     li.appendChild(textSpan);
     li.appendChild(Action);
+    ol.insertBefore(li, ol.firstChild);
 
     const deleteTask = Action.querySelector(".delete");
     deleteTask.addEventListener("click", function () {
       TaskArray.splice(index, 1);
+      console.log(TaskArray);
       updateLocalStorage();
       safai();
     });
